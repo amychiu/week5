@@ -1,0 +1,30 @@
+
+<h1><font color="mediumvioletred" face="comic sans MS">Events</font></h1>
+
+<%= link_to 'Add a New Event', new_event_path %>
+<p />
+<table rules=rows frame=hsides bordercolor=LightGray cellpadding=7>
+  <tr>
+    <th>Title</th>
+    <th>Happening on</th>
+    <th>Venue</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+<tbody align="center" style="font-family:verdana; color:purple">
+  <tr>
+    <td><%= link_to event.title, event %></td>
+    <td><%= event.happening_on.strftime("%B %d at %I:%M:%S %p")%></td>
+    <td><%= link_to event.venue.name, venue_path(:id => event.venue_id) %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %></td>
+    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+

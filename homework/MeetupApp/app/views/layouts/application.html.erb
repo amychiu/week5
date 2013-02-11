@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MeetupApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<header>
+		<h1><font color="purple" face="comic sans MS">Meetup App</font></h1>
+		<nav>
+			<%=link_to "Events", events_path %> |
+			<%=link_to "Venues", venues_path %>
+		</nav>
+		<hr>
+	</header>
+
+	<br>
+	<%= yield %>
+	</br>
+	<br />
+	<footer>
+		&copy; by Amy Chiu
+	</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1><font color="mediumvioletred" face="comic sans MS">Event Details</font></h1>
+<p />
+
+<%= link_to 'Edit This Event', edit_event_path(@event) %>
+
+<p>
+  <b>Title:</b>
+  <%= @event.title %>
+</p>
+
+<p>
+  <b>Happening on:</b>
+  <%= @event.happening_on %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @event.venue.name %>
+</p>
+
+
+<%= link_to 'Back', events_path %>
